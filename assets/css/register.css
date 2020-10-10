@@ -1,0 +1,234 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.logo{
+    position: absolute;
+    width: 300px;
+}
+
+.main-container{
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-areas:" register-left register-right";
+}
+
+
+.register-right{
+    grid-area:register-right;
+   
+
+}
+
+
+
+.form-container{
+    display: flex;
+    height: 100%;
+    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10vh;
+}
+
+.form-container h1{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 55px;    
+    color: #129CAE;
+}
+
+/* .social{
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+}
+
+.dot{
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+    border: 2px  solid black;
+    border-radius: 50px;
+} */
+
+.subtitle{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 45px;
+
+color: #B1B1B1;
+
+}
+
+.signin-form{
+    padding-top: 10px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.signin-form label{
+    padding-top: 10px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 45px;
+    color: #129CAE;
+
+}
+
+
+.signin-form input{
+    outline: none;
+    font-size: 20px;
+    width: 100%;
+    padding:10px;
+    border-radius: 12px;
+    border:2px solid rgb(129, 129, 129);
+
+}
+
+
+
+.signin-form button{
+    cursor: pointer;
+    margin-top: 20px;
+    background-color:white;
+    border:3px solid #129CAE ;
+    border-radius: 70px;
+    width: 40%;
+    padding: 15px;
+    color:#129CAE ;
+    align-self: center;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+   
+
+
+    transition: all 0.3s ease;
+    
+
+
+}
+
+
+.signin-form button:hover{
+    cursor: pointer;
+    margin-top: 20px;
+    background-color:#129CAE;
+    border:3px solid #129CAE ;
+    border-radius: 70px;
+    width: 40%;
+    padding: 15px;
+    color:#fff ;
+    align-self: center;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+   
+
+
+    
+  
+
+}
+
+
+
+.register-left{
+    grid-area: register-left;
+    background: linear-gradient(180deg, #1EA0B1 0%, #00E2FF 100%);background: linear-gradient(180deg, #1EA0B1 0%, #00E2FF 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.register-left h1{
+    font-family: Montserrat;
+font-style: normal;
+font-weight: 800;
+font-size: 65px;
+line-height: 78px;
+
+color: #FFFFFF;
+
+}
+
+
+.register-left h3{
+    font-family: poppins;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 44px;
+/* identical to box height */
+    text-align: center;
+    color: #FFF4F4;
+    padding-top: 20px;
+    padding-bottom: 30px;
+
+}
+
+.register-left a{
+    background-color:rgba(255, 255, 255, 0);
+    border:3px solid #ffffff ;
+    border-radius: 70px;
+    width: 40%;
+    padding: 15px;
+    color:#ffffff ;
+    align-self: center;
+    text-decoration: none;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+.register-left a:hover{
+    background-color:#fff ;
+    border:3px solid #ffffff ;
+    border-radius: 70px;
+    width: 40%;
+    padding: 15px;
+    color:#129CAE ;
+    align-self: center;
+    text-decoration: none;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+   
+}
+
+@media all and (max-width:1173px){
+    .main-container{
+        height: 100vh;
+        
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-areas:"register-left "
+                            "register-right";
+    }
+}

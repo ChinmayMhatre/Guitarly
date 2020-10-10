@@ -14,9 +14,13 @@
 	<div class="container">
 		<h2>Logo</h2>
 	<ul>
-		<li><a href="#">login</a></li>
-		<li><a href="#">register</a></li>
-		
+		<li><a href="./views/login.html">login</a></li>
+		<li><a href="./views/register.html">register</a></li>
+		<li>
+			<form action="./includes/logout.inc.php" method="post" >
+                <button type="submit" name="logout-submit">logout</button>
+            </form>
+		</li>
 	</ul>
 	</div>
 	

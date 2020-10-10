@@ -43,7 +43,6 @@ h3{
 	line-height: 30px;
 }
 
-.nav{}
 
 
 .container{
@@ -229,7 +228,7 @@ color: #FFFEFE;
 	margin-top: 3rem;
 	display: grid;
 	grid-template-columns: 50% 50%;
-	grid-template-areas: "met-content met-img"
+	grid-template-areas: 	"met-content met-img"
 							"tuner-img tuner-content "
 							"practisearea-content practisearea-img";
 	gap: 90px;
@@ -309,9 +308,9 @@ color: #FFFEFE;
 		margin-top: 3rem;
 		display: grid;
 		grid-template-columns: 100%;
-		grid-template-areas: "met-content"
+		grid-template-areas: 	"met-content"
 								"met-img"
-								" tuner-content "
+								"tuner-content "
 								"tuner-img"
 								"practisearea-content "
 								"practisearea-img";

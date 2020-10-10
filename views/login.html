@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Login Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="../assets/css/login.css">
+
+
+
+    <style>
+    .social{
+        display: flex;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .dot{
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+    border: 2px  solid black;
+    border-radius: 50px;
+}
+    </style>
+</head>
+<body>
+    <img class="logo" src="logo.svg" alt="">
+    
+    <div class="main-container">
+        <div class="login-left">
+            <div class="form-container">
+                <h1>Sign in to Account </h1>
+                <div class="social">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                <p class="subtitle">Or use your email</p>
+                <form action="../includes/login.inc.php" method="POST" class="signin-form">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" required>
+                    <label for="password" >Password</label>
+                    <input type="password" name="password" required style="margin-bottom:20px ;" >
+                    <button type="submit" name="login-submit">Sign In</button>
+                </form>
+            </div>     
+            
+
+        </div>
+        <div class="login-right">
+            <h1>Hi There!</h1>
+            <h3>If you do not have <br> an account </h3>
+            <a href="register.html">Create new account</a>
+        </div>
+    </div>
+
+
+</body>
+</html>
