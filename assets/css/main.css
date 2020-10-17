@@ -63,7 +63,7 @@ h3{
 .container ul{
 	color: white;
 	display: flex;
-	width: 30%;
+	width: 50%;
 	justify-content: space-around;
 }
 
@@ -88,8 +88,8 @@ h3{
 
 	.container ul{
 		
-		width: 80%;
-		
+		width:90%;
+	
 	}
 
 	
