@@ -99,7 +99,7 @@ color: #B1B1B1;
     padding:10px;
     border-radius: 12px;
     border:2px solid rgb(129, 129, 129);
-
+    color: rgb(129, 129, 129);
 }
 
 
@@ -204,6 +204,7 @@ color: #FFFFFF;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
+    text-align: center;
     transition: all 0.3s ease;
 }
 .login-right a:hover{
@@ -231,4 +232,24 @@ color: #FFFFFF;
         grid-template-areas:"login-right "
                             "login-left";
     }
+
+
+    .form-container h1{
+        text-align: center;
+    }
+
+
+    .signin-form{
+        padding-top: 10px;
+        width: 90%;
+     
+    
+    }
+
+    .login-right{
+     
+        padding-bottom: 50px;
+        padding-top: 50px;
+    }
+
 }

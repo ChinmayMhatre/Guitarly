@@ -154,6 +154,7 @@ h3{
 	font-weight: 700px;
 	color: #014252;
 	transition: all 0.5s ease;
+
 }
 .hero-content a:hover{
 	background-color: #129cae;
@@ -448,6 +449,7 @@ color: #FFFEFE;
 	border: 2px  solid var(--secondaryColor);
 	border-radius: 25px;
 	transition: all 0.5s ease;
+	outline:none;
 }
 
 .footer-submit:hover{
@@ -527,6 +529,109 @@ color: #FFFEFE;
 }
 
 
+}
 
 
+
+
+
+
+  /*?========================  */
+/** about us page */
+/*?========================  */
+
+.about-map{
+	background-color: var(--mainColor);
+	padding: 70px;
+}
+.about-video{
+	background-color: var(--primaryText);
+	padding: 70px;
+}
+
+.video-container{
+	display: flex;
+	justify-content: center;
+}
+
+@media all and (max-width:700px){
+	.about-video{
+		
+		padding: 20px;
+	}
+	.video-container{
+		display: flex;
+		justify-content: center;
+		width: 90%;
+	}
+}
+
+.map-container{
+	display: flex;
+	justify-content: center;
+}
+
+
+.video-button{
+    cursor: pointer;
+    margin-top: 20px;
+    background-color:white;
+    border:3px solid #129CAE ;
+    border-radius: 70px;
+    width: 40%;
+    padding: 15px;
+    color:#129CAE ;
+    align-self: center;
+	outline:none;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+   
+
+
+    transition: all 0.3s ease;
+    
+
+
+}
+
+
+.video-button:hover{
+    cursor: pointer;
+    margin-top: 20px;
+    background-color:#129CAE;
+    border:3px solid #129CAE ;
+    border-radius: 70px;
+    width: 40%;
+    padding: 15px;
+    color:#fff ;
+    align-self: center;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+   
+
+
+    
+  
+
+}
+
+
+
+
+
+
+/*?========================  */
+/** contact page */
+/*?========================  */
+
+
+#mapid { 
+	width:70%;
+	margin: 5vh auto; 
+	height: 70vh;
 }
