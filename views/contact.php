@@ -2,15 +2,18 @@
  include_once "../includes/header.php"
 ?>
 
-<div class="section-heading">
+<a href="../index.php" class="logo-link"><img src="../assets/images/logo/logo-dark.svg" alt="" class="logo"></a>
+
+
+<div class="section-heading" style="padding-top: 200px;padding-bottom:100px">
 			<h2 style="color: var(--darkColor);">Contact Us</h2>
 			<img src="../assets/images/icon/secondary-small-guitar.png" alt="">
 		</div>
 
-<div id="mapid"></div>
+<div data-aos="zoom-in" id="mapid"></div>
 
 
-<section id="footer">
+<section id="footer" style="margin-top: 50px;">
 	<div class="form">
 		
 		<form action="#" class="footer-form">

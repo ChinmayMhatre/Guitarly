@@ -9,9 +9,18 @@
 		<h2>Logo</h2>
 	<ul>
 		<li><a href="./views/about.php">About Us</a></li>
-		<li><a href="./views/login.html">login</a></li>
-		<li><a href="./views/register.html">register</a></li>
 		<li><a href="./views/contact.php">Contact  Us</a></li>
+				
+		<?php 
+		if(isset( $_SESSION["user_email"])){
+			echo '<li><a href="./views/home.php">home</a></li>';
+			echo '<li><a href="./includes/logout.inc.php">Log out</a></li>';
+		}else{
+			echo '<li><a href="./views/login.php">login</a></li>';	
+			echo '<li><a href="./views/register.php">register</a></li>';	
+		}
+		?>
+
 		<li>
 			<!-- <form action="./includes/logout.inc.php" method="post" >
                 <button type="submit" name="logout-submit">logout</button>
@@ -24,7 +33,7 @@
 
 
 <div class="hero">
-	<img src="./assets/images/guitar.jpg" alt="">
+	<img style="position: fixed;z-index:-1;" src="./assets/images/guitar.jpg" alt="">
 	<div class="hero-content">
 		<h1  data-aos="zoom-in" data-aos-duration="1000">Welcome to guitarly</h1>
 		<h3  data-aos="zoom-in" data-aos-delay="50" data-aos-duration="1000">Your journey to a better guitarist</h3>

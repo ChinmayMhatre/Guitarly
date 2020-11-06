@@ -336,7 +336,7 @@ color: #FFFEFE;
   }
 
   .about-us-main{
-	  padding-top: 30px;
+	  padding-top: 20px;
 	  padding-bottom: 50px;
 	  display: grid;
 	  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
@@ -540,6 +540,16 @@ color: #FFFEFE;
 /** about us page */
 /*?========================  */
 
+.logo{
+	width: 200px;
+	
+}
+
+.logo-link{
+	display: flex;
+	
+}
+
 .about-map{
 	background-color: var(--mainColor);
 	padding: 70px;
@@ -555,6 +565,18 @@ color: #FFFEFE;
 }
 
 @media all and (max-width:700px){
+
+	#about-us{
+		padding-top: 100px;
+		padding-bottom: 70px;
+	  }
+	
+
+	.logo-link{
+		display: flex;
+		justify-content: center;
+	}
+
 	.about-video{
 		
 		padding: 20px;

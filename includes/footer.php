@@ -12,5 +12,6 @@
    crossorigin=""></script>
 <script src="../assets/js/map.js"></script>
 <script src="../assets/js/tuner.js"></script>
+<script src="../assets/js/validation.js"></script>
 </body>
 </html>

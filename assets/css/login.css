@@ -72,6 +72,18 @@ color: #B1B1B1;
 
 }
 
+#success{
+    
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 45px;
+    color: #00d600;
+    padding-top: 10px;
+
+}
+
 .signin-form{
     padding-top: 10px;
     width: 60%;

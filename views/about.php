@@ -2,7 +2,7 @@
  include_once "../includes/header.php"
 ?>
 
-
+<a href="../index.php" class="logo-link"><img src="../assets/images/logo/logo-dark.svg" alt="" class="logo"></a>
 
 <section id="about-us">
 	<div class="contain">
