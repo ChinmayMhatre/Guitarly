@@ -2,14 +2,10 @@
 <?php
 	include_once "../includes/header.php";
 ?>
-<style>
-    body{
-        background-color: black;
-    }
-</style>
 
-<div class="nav">
-	<div class="container">
+
+<div class="home-nav">
+	
 		<h2>Logo</h2>
 	<ul>
 		<li><a href="./about.php">About Us</a></li>
@@ -24,15 +20,56 @@
 		}
 		?>
 		<li>
-			<!-- <form action="./includes/logout.inc.php" method="post" >
-                <button type="submit" name="logout-submit">logout</button>
-            </form> -->
+			
 		</li>
 	</ul>
-	</div>
 	
 </div>
 
+<div id="home-main">
+	<div id="home-list-section">
+		<ul class="tabs">
+			<li class="tab " data-tab-target='#practise-routine'>Practise Routine</li>
+			<li class="tab active" data-tab-target='#edit-routine'>Edit Routine</li>
+		</ul>
+		<div class="tab-content">
+			<div id="practise-routine"   data-tab-content>
+				<h1>Practise</h1>
+			</div>
+			<div id="edit-routine" data-tab-content class="active">
+				<div class="inputs">
+					<input type="text" name="taskname" id="tname" placeholder="Enter Task Name">
+					<input type="number" name=time id="time" placeholder="Enter Minutes">
+					<button onclick="taskUpdate()" type="submit">
+						Add/Update
+					</button>	
+				</div>
+				<div id="task-list">
+					<!-- <div class="task"><div class="task-name">Chord changes from c to d</div>
+						<div class="task-time"><span>10</span> Min</div>
+						<button class="task-delete">delete</button>
+					</div>
+					 -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="home-tools-section">
+		<h3 id="task-name">Task Name</h3>
+		<div id="timer">
+			<div ><h3>Time left</h3></div>
+			<div  id="time-left"> 60 </div>
+			<button id="start-button">start/stop</button>
+		</div>
+
+		
+	</div>
+</div>
+
+
+
+
+<!-- <script src="js/visualization.js"></script> -->
 
 <?php
 	include_once "../includes/footer.php";

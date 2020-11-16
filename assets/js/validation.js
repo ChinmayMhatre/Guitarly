@@ -26,7 +26,7 @@
 
 
   function form_submit_signup(){
-    console.log("123");
+    
     if (formValidator_signup()==true){
       var form = document.querySelector(".signin-form");
       form.submit();

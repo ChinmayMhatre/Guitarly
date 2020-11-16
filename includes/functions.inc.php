@@ -81,7 +81,7 @@ function emptyinputlogin($email,$pwd){
 function  loginuser($con,$email,$pwd){
     $emailexists=emailexists($con,$email);
 
-    if($email == false){
+    if($emailexists == false){
         header("location:../views/login.php?error=emailnotfound");
         exit();
     }
@@ -95,6 +95,8 @@ function  loginuser($con,$email,$pwd){
     else if($checkpwd == true){
         session_start();
         $_SESSION["user_email"]=$emailexists['email'];
+        $_SESSION["user_name"]=$emailexists['username'];
+        $_SESSION["user_id"]=$emailexists['id'];
         header("location:../views/home.php?error=none");
         exit();
     }
