@@ -35,6 +35,18 @@
 		<div class="tab-content">
 			<div id="practise-routine"   data-tab-content>
 				<h1>Practise</h1>
+				<div id="practise-list">
+					<div class="practise"><div class="practise-name">Chord changes from c to d</div>
+						<div class="practise-time"><span>10</span> Min</div>
+					</div>
+					<div class="practise"><div class="practise-name">Chord changes from c to d</div>
+						<div class="practise-time"><span>10</span> Min</div>
+					</div>
+					<div class="practise"><div class="practise-name">Chord changes from c to d</div>
+						<div class="practise-time"><span>10</span> Min</div>
+					</div>
+					 
+				</div>
 			</div>
 			<div id="edit-routine" data-tab-content class="active">
 				<div class="inputs">

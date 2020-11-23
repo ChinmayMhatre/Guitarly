@@ -15,7 +15,7 @@ $uid = $_SESSION["user_id"];
 
 
 
-    $sql1 = "SELECT * from tasks where task_name ='$tname'";
+    $sql1 = "SELECT * from tasks where task_name ='$tname' AND user_id = '$uid'";
     $result = $con->query($sql1);
     if ($result->num_rows > 0) {
     // output data of each row

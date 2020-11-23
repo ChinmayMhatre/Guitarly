@@ -77,22 +77,18 @@ function displayList(){
     
     var tasks = document.querySelectorAll('.task');
     var tasklist = document.querySelector('#task-list');
-   
-   
-   
-
     var txt ="";
     var xmlhttp=new XMLHttpRequest();
     xmlhttp.onreadystatechange=function() {
       if (this.readyState==4 && this.status==200) {
           
-          myObj = JSON.parse(this.responseText); 
+          myObj = JSON.parse(this.responseText);
+           
         //    console.log(typeof myObj);
         //   alert(myObj);
            if (myObj.length === 0) { 
-               alert("wrong");
-              txt = "No details found"
-          }
+                
+            }
           else{
             while (tasklist.hasChildNodes()) {  
                 tasklist.removeChild(tasklist.firstChild);
@@ -122,38 +118,60 @@ function displayList(){
                
                
             tasklist.appendChild(task);
+            
             //    console.log(myObj[x]);
            } 
            }
         //  document.getElementById("userDetail").innerHTML = txt; 
-        
+        document.querySelector('#task-list').addEventListener('click',(e)=>{
+            
+            if(e.target.className == 'task-delete'){
+                    
+                    var r = confirm("Are you sure you want to delete the task?");
+                    if (r == true) {            
+                    var delname=e.target.parentElement.firstChild.innerText;
+                    var xmlhttp2=new XMLHttpRequest();
+                    xmlhttp2.onreadystatechange=function() {
+                    if (xmlhttp2.readyState==4 && xmlhttp2.status==200) {
+                        myObj2 = xmlhttp2.responseText; 
+                        console.log(myObj2);
+                        location.reload();
+                        // displayList();
+
+                    }}
+                    xmlhttp2.open("GET","../includes/deletetask.php?delname="+delname,true);
+                    xmlhttp2.send(); 
+
+                  } else {
+                    
+                  }
+
+                
+            }
+            
+        })
       }
     }
     xmlhttp.open("GET","../includes/showlist.php",true);
-
-    
     xmlhttp.send(); 
 }
 
-var deletebuttons = document.querySelectorAll('.task-delete');
 
 
-
-
-
-function DeleteTask(){
-    alert('clicked');
+function practiceList(){
+    var practiselist = document.querySelector('#practise-list');
 }
+
 
 
 
 //? =====================================
 // * timer + listloading
 //? =====================================
-
+displayList();
 
 document.addEventListener("DOMContentLoaded",()=>{
-    displayList();
+    
     const timeLeftDisplay = document.querySelector('#time-left');
     const startBtn = document.querySelector('#start-button');
     var interval =-1 ;

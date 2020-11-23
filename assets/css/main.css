@@ -862,4 +862,26 @@ color: #FFFEFE;
 	padding: 5px 10px;
 	background-color: var(--darkColor);
 	border: 3px solid white;
+	cursor: pointer;
+}
+#practise-list{
+	
+	padding-top: 10px;
+}
+.practise{
+	margin-top: 10px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	
+	padding: 5px;
+	border: 3px solid white;
+}
+
+.practise .practise-name{
+	align-self: center;
+	justify-self: center;
+}
+.practise .practise-time{
+	align-self: center;
+	justify-self: center;
 }
