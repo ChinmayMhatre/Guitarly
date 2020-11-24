@@ -34,9 +34,9 @@
 		</ul>
 		<div class="tab-content">
 			<div id="practise-routine"   data-tab-content>
-				<h1>Practise</h1>
+				<h3>Click on any tasks to start practising</h3>
 				<div id="practise-list">
-					<div class="practise"><div class="practise-name">Chord changes from c to d</div>
+					<!-- <div class="practise"><div class="practise-name">Chord changes from c to d</div>
 						<div class="practise-time"><span>10</span> Min</div>
 					</div>
 					<div class="practise"><div class="practise-name">Chord changes from c to d</div>
@@ -44,7 +44,7 @@
 					</div>
 					<div class="practise"><div class="practise-name">Chord changes from c to d</div>
 						<div class="practise-time"><span>10</span> Min</div>
-					</div>
+					</div> -->
 					 
 				</div>
 			</div>
@@ -57,11 +57,11 @@
 					</button>	
 				</div>
 				<div id="task-list">
-					<!-- <div class="task"><div class="task-name">Chord changes from c to d</div>
+					 <!-- <div class="task"><div class="task-name">Chord changes from c to d</div>
 						<div class="task-time"><span>10</span> Min</div>
 						<button class="task-delete">delete</button>
 					</div>
-					 -->
+					  -->
 				</div>
 			</div>
 		</div>

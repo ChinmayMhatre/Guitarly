@@ -1,3 +1,9 @@
+var timeLeft;
+var timeName = document.querySelector('#task-name');
+var timeTime = document.querySelector('#task-time');
+
+
+
 
 //? =====================================
 // * Tabs
@@ -60,6 +66,7 @@ function taskUpdate(){
                   myObj = this.responseText; 
                   console.log(myObj);
                   displayList();
+                  practiceList();
 
                
                 
@@ -75,9 +82,9 @@ function taskUpdate(){
 
 function displayList(){
     
-    var tasks = document.querySelectorAll('.task');
+   // var tasks = document.querySelectorAll('.task');
     var tasklist = document.querySelector('#task-list');
-    var txt ="";
+    //var txt ="";
     var xmlhttp=new XMLHttpRequest();
     xmlhttp.onreadystatechange=function() {
       if (this.readyState==4 && this.status==200) {
@@ -85,7 +92,7 @@ function displayList(){
           myObj = JSON.parse(this.responseText);
            
         //    console.log(typeof myObj);
-        //   alert(myObj);
+          //alert(myObj);
            if (myObj.length === 0) { 
                 
             }
@@ -143,8 +150,8 @@ function displayList(){
                     xmlhttp2.send(); 
 
                   } else {
-                    
-                  }
+                       
+                    }
 
                 
             }
@@ -160,7 +167,62 @@ function displayList(){
 
 function practiceList(){
     var practiselist = document.querySelector('#practise-list');
-}
+    var xmlhttp3=new XMLHttpRequest();
+    xmlhttp3.onreadystatechange=function() {
+      if (this.readyState==4 && this.status==200) {
+            myObj1 = JSON.parse(this.responseText);
+            if (myObj1.length === 0) { 
+                
+            }else{
+                while (practiselist.hasChildNodes()) {  
+                    practiselist.removeChild(practiselist.firstChild);
+                }
+                for (x=0;x<myObj1.length;x++) {
+                var practise =document.createElement("DIV");
+                practise.classList.add('practise');
+                var practisename =document.createElement("DIV");
+                practisename.classList.add('practise-name');
+                practisename.appendChild(document.createTextNode(myObj1[x].task_name))
+            
+                practise.appendChild(practisename);
+       
+                var practisetime =document.createElement("DIV");
+                practisetime.classList.add('practise-time');
+                var span =document.createElement('SPAN');
+                span.appendChild(document.createTextNode(myObj1[x].task_time));
+                
+                practisetime.appendChild(span);
+                practisetime.appendChild(document.createTextNode(" Min"));
+                practise.appendChild(practisetime);
+
+                practiselist.appendChild(practise);
+                }
+                var items = document.querySelectorAll('.practise');
+                
+                items.forEach(item=>{ 
+                    item.classList.remove('active');
+                    item.addEventListener('click',()=>{
+                        items.forEach(itm=>{
+                            itm.classList.remove('active');
+                        })
+                        item.classList.add('active');
+                        timeName.innerText = item.firstChild.innerText;
+                        console.log(item.lastChild.firstChild.innerText);
+                        timeLeft = Number(item.lastChild.firstChild.innerText) * 60;
+                        var timeLeftDisplay = document.querySelector('#time-left');
+                        timeLeftDisplay.innerHTML = item.lastChild.firstChild.innerText ;
+                        clearInterval(interval);
+                    })
+                })
+
+            }
+      }
+        }
+        xmlhttp3.open("GET","../includes/showlist.php",true);
+        xmlhttp3.send(); 
+
+
+    }
 
 
 
@@ -169,13 +231,15 @@ function practiceList(){
 // * timer + listloading
 //? =====================================
 displayList();
+practiceList();
 
 document.addEventListener("DOMContentLoaded",()=>{
     
-    const timeLeftDisplay = document.querySelector('#time-left');
+    
     const startBtn = document.querySelector('#start-button');
     var interval =-1 ;
-    timeLeft=70;
+    // timeLeft=70;
+    var timeLeftDisplay = document.querySelector('#time-left');
     timeLeftDisplay.innerHTML = timeLeft;
 
     function convertseconds(s){
