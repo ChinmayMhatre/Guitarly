@@ -883,6 +883,10 @@ color: #FFFEFE;
 	border: 3px solid white;
 }
 
+.practise.strike{
+	text-decoration: line-through;
+}
+
 .practise.active{
 	margin-top: 10px;
 	display: grid;

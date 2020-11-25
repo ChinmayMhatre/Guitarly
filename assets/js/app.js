@@ -1,7 +1,9 @@
-var timeLeft;
+var timeLeft = "-";
 var timeName = document.querySelector('#task-name');
 var timeTime = document.querySelector('#task-time');
-
+var taskcookie ={} ;
+var uid;
+var phptime ;
 
 
 
@@ -64,7 +66,7 @@ function taskUpdate(){
             xmlhttp.onreadystatechange=function() {
               if (this.readyState==4 && this.status==200) {
                   myObj = this.responseText; 
-                  console.log(myObj);
+                  //console.log(myObj);
                   displayList();
                   practiceList();
 
@@ -80,6 +82,8 @@ function taskUpdate(){
     }  
 }
 
+// 
+
 function displayList(){
     
    // var tasks = document.querySelectorAll('.task');
@@ -88,7 +92,7 @@ function displayList(){
     var xmlhttp=new XMLHttpRequest();
     xmlhttp.onreadystatechange=function() {
       if (this.readyState==4 && this.status==200) {
-          
+          console.log(this.responseText);
           myObj = JSON.parse(this.responseText);
            
         //    console.log(typeof myObj);
@@ -133,27 +137,31 @@ function displayList(){
         document.querySelector('#task-list').addEventListener('click',(e)=>{
             
             if(e.target.className == 'task-delete'){
-                    
-                    var r = confirm("Are you sure you want to delete the task?");
-                    if (r == true) {            
-                    var delname=e.target.parentElement.firstChild.innerText;
-                    var xmlhttp2=new XMLHttpRequest();
-                    xmlhttp2.onreadystatechange=function() {
-                    if (xmlhttp2.readyState==4 && xmlhttp2.status==200) {
-                        myObj2 = xmlhttp2.responseText; 
-                        console.log(myObj2);
-                        location.reload();
-                        // displayList();
-
-                    }}
-                    xmlhttp2.open("GET","../includes/deletetask.php?delname="+delname,true);
-                    xmlhttp2.send(); 
+                        console.log(timeName.innerHTML);
+                        if(timeName.innerHTML == e.target.parentElement.firstChild.innerText){
+                            alert("you cannot do that");
+                        }else{
+                                var r = confirm("Are you sure you want to delete the task?");
+                                if (r == true) {            
+                                    var delname=e.target.parentElement.firstChild.innerText;
+                                    var xmlhttp2=new XMLHttpRequest();
+                                    xmlhttp2.onreadystatechange=function() {
+                                    if (xmlhttp2.readyState==4 && xmlhttp2.status==200) {
+                                        myObj2 = xmlhttp2.responseText; 
+                                        //console.log(myObj2);
+                                        location.reload();
+                                        // displayList();
+                                }}
+                        xmlhttp2.open("GET","../includes/deletetask.php?delname="+delname,true);
+                        xmlhttp2.send(); 
 
                   } else {
                        
-                    }
+                        }
+                        }
+                        
+                    
 
-                
             }
             
         })
@@ -199,28 +207,62 @@ function practiceList(){
                 }
                 var items = document.querySelectorAll('.practise');
                 
+                
+
                 items.forEach(item=>{ 
                     item.classList.remove('active');
                     item.addEventListener('click',()=>{
+                       // document.querySelector('#start-button').disabled=false;
                         items.forEach(itm=>{
                             itm.classList.remove('active');
                         })
                         item.classList.add('active');
                         timeName.innerText = item.firstChild.innerText;
-                        console.log(item.lastChild.firstChild.innerText);
+                        //console.log(item.lastChild.firstChild.innerText);
                         timeLeft = Number(item.lastChild.firstChild.innerText) * 60;
+                        
                         var timeLeftDisplay = document.querySelector('#time-left');
                         timeLeftDisplay.innerHTML = item.lastChild.firstChild.innerText ;
-                        clearInterval(interval);
+                        phptime =   timeLeftDisplay.innerHTML
+                        // clearInterval(interval);
+
+
                     })
                 })
+                var getuid=new XMLHttpRequest();
+                getuid.onreadystatechange=function() {
+                if (this.readyState==4 && this.status==200) {
+                   // console.log(this.responseText);
+                    uid = this.responseText;
+                    //console.log(uid);
+                    var cooks =getCookie(uid);
+                    cooks =  JSON.parse(cooks);
+                    if(cooks){
+                        console.log(cooks);
+                        items.forEach((i)=>{
+                            cooks.forEach((cook)=>{
+                                if(cook == i.firstChild.innerHTML){
+                                    i.classList.add("strike");
+                                }
+                            })
+                            
+                        })
+                    }
+                    
+                }}
+                getuid.open("GET","../includes/getuid.php",true);
+                getuid.send(); 
+                    
+
+                
 
             }
-      }
+        }
+      
         }
         xmlhttp3.open("GET","../includes/showlist.php",true);
         xmlhttp3.send(); 
-
+        // console.log(strtotime('today 23:59'));
 
     }
 
@@ -233,10 +275,12 @@ function practiceList(){
 displayList();
 practiceList();
 
+
 document.addEventListener("DOMContentLoaded",()=>{
     
     
     const startBtn = document.querySelector('#start-button');
+    startBtn.innerHTML= "Start/Stop";
     var interval =-1 ;
     // timeLeft=70;
     var timeLeftDisplay = document.querySelector('#time-left');
@@ -250,29 +294,186 @@ document.addEventListener("DOMContentLoaded",()=>{
 
         function startcd(){
             
-            timeLeft-=1;
-           if (timeLeft<=0){
-            clearInterval(timeLeft = 0);
-           }
-           var t = convertseconds(timeLeft);
-            timeLeftDisplay.innerHTML=t;
             
+           if (timeLeft<=0){
+   
+            clearInterval(timeLeft = 0);
+            startBtn.innerHTML= "Done ";
+           }
+            else{
+                timeLeft-=1;
+                var t = convertseconds(timeLeft);
+                timeLeftDisplay.innerHTML=t;
+                startBtn.innerHTML= "Start/Stop";    
+            }
+           
         }
         
-        
+      
   
     startBtn.addEventListener("click",function(){
-        if(interval ==-1){
-            interval = setInterval(startcd,1000)
+        if(interval == -1){
+            if(timeLeft=="-"){
+                //startBtn.disabled = true;
+                alert("select a task to continue");
+            }
+            else{
+                interval = setInterval(startcd,1000);
+            }
+            
         }else{
             clearInterval(interval);
+            if(timeLeft == 0){
+                alert("completed");
+
+            var uidreq=new XMLHttpRequest();
+            uidreq.onreadystatechange=function() {
+            if (this.readyState==4 && this.status==200) {
+                console.log(this.responseText);
+                uid = this.responseText;
+                console.log(getCookie(uid)) ;
+            mycookie = getCookie(uid);
+            if(mycookie){//? adding to old cookie
+               // console.log("inside",mycookie);
+                values = JSON.parse(mycookie);
+                values.every((value)=>{
+                    //console.log(value); 
+                    //console.log(timeName.innerHTML); 
+                    if(value == timeName.innerHTML){
+                        //! update in the database
+                        console.log(phptime); 
+                        var updatexml =new XMLHttpRequest();
+                        updatexml.onreadystatechange=function() {
+                        if (this.readyState==4 && this.status==200) {
+                            console.log(this.responseText); 
+                        }}
+                        updatexml.open("GET","../includes/insertprogress.php?phptime="+phptime,true);
+                        updatexml.send(); 
+                         
+                    }else{
+                        //! add in the database
+                        var updatexml1 =new XMLHttpRequest();
+                        updatexml1.onreadystatechange=function() {
+                        if (this.readyState==4 && this.status==200) {
+                            console.log(this.responseText);
+                            values.push(timeName.innerHTML);
+                            setCookie(uid,JSON.stringify(values),1);
+                            return false;
+                             
+                        }}
+                        updatexml1.open("GET","../includes/insertprogress.php?phptime="+phptime,true);
+                        updatexml1.send();
+                        
+                        
+                    }
+                })
+                
+                location.reload();
+            }
+            else{//?new cookie
+                mycookie = [timeName.innerHTML];
+                console.log(JSON.stringify(mycookie));
+                
+                var insertxml = new XMLHttpRequest();
+                insertxml.onreadystatechange = function() {
+                  if (this.readyState == 4 && this.status == 200) {
+                    console.log(this.responseText) ;
+                    setCookie(uid,JSON.stringify(mycookie),1);
+                  }
+                };
+                insertxml.open("GET", "../includes/insertprogress.php?phptime="+phptime, true);
+                insertxml.send();
+
+                
+
+               // console.log('outside',mycookie);
+                location.reload();
+                //!add in the database
+            }
+          
+                
+            }}
+            uidreq.open("GET","../includes/getuid.php",true);
+            uidreq.send(); 
+            
+            
+
+
+
+                startBtn.innerHTML= "Start/Stop";
+                timeLeft = "-";
+                timeLeftDisplay.innerHTML=timeLeft;
+
+            }
             interval = -1;
         }
     });
 
-    
-    
+ 
+ 
   
 })
+
+
+
+
+// function setCookie(cname, cvalue, exdays) {
+//     var d = new Date();
+//     d.setTime(d.getTime() + (exdays*24*60*60*1000));
+//     var expires = "expires="+ d.toUTCString();
+//     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+//   }
+function setCookie(cname, cvalue, exdays) {
+    var date = new Date();
+    var midnight = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 59);
+    var expires = "expires="+ midnight.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+
+
+  function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+
+
+// function bake_cookie(name, value) {
+//     var cookie = [name, '=', JSON.stringify(value), '; domain=.', window.location.host.toString(), '; path=/;'].join('');
+//     console.log(cookie);
+//     document.cookie = cookie;
+//   }
+
+
+// function read_cookie(name) {
+//     var result = document.cookie.match(new RegExp(name + '=([^;]+)'));
+//     result && (result = JSON.parse(result[1]));
+//     return result;
+//    }
+
+//   function getCookie()  
+//   {  
+//       if( document.cookie.length!=0)  
+//       {  
+//   //Parsing JSON string to JSON object  
+//       return JSON.parse(document.cookie);  
+
+//           //alert("Name="+obj.name+" "+"Email="+obj.email+" "+"Course="+obj.course);  
+//       }  
+//       else  
+//       {  
+//           return taskcookie;
+//       }  
+//   }  
 
 

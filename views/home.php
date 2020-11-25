@@ -29,11 +29,11 @@
 <div id="home-main">
 	<div id="home-list-section">
 		<ul class="tabs">
-			<li class="tab " data-tab-target='#practise-routine'>Practise Routine</li>
-			<li class="tab active" data-tab-target='#edit-routine'>Edit Routine</li>
+			<li class="tab active " data-tab-target='#practise-routine'>Practise Routine</li>
+			<li class="tab " data-tab-target='#edit-routine'>Edit Routine</li>
 		</ul>
 		<div class="tab-content">
-			<div id="practise-routine"   data-tab-content>
+			<div id="practise-routine"   data-tab-content class="active">
 				<h3>Click on any tasks to start practising</h3>
 				<div id="practise-list">
 					<!-- <div class="practise"><div class="practise-name">Chord changes from c to d</div>
@@ -48,7 +48,7 @@
 					 
 				</div>
 			</div>
-			<div id="edit-routine" data-tab-content class="active">
+			<div id="edit-routine" data-tab-content >
 				<div class="inputs">
 					<input type="text" name="taskname" id="tname" placeholder="Enter Task Name">
 					<input type="number" name=time id="time" placeholder="Enter Minutes">
