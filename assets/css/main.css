@@ -89,7 +89,7 @@ h3{
 
 	.container ul{
 		
-		width:90%;
+		width:100%;
 	
 	}
 
@@ -676,7 +676,7 @@ color: #FFFEFE;
 .home-nav{
 	
 	
-	padding-top: 10px;
+	/* padding-top: 10px; */
 	width:70%;
 	margin:0 auto;
 	display: flex;
@@ -687,10 +687,12 @@ color: #FFFEFE;
 	color: rgb(0, 0, 0);
 }
 
+
+
 .home-nav ul{
 	color: rgb(0, 0, 0);
 	display: flex;
-	width: 50%;
+	width: 40%;
 	justify-content: space-around;
 }
 
@@ -739,21 +741,87 @@ color: #FFFEFE;
 	padding: 5vh;
 	grid-area: tools;
 	min-height: 82vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	
 
 }
 
 #timer{
-	padding-top: 3vh;
+	padding-bottom: 4vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
 	min-height: 150px;
+	
+}
+
+#time-left{
+	font-size: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: var(--darkColor);
+}
+
+#start-button{
+	margin-top: 10px;
+	padding: 5px 20px;
+	font-size: 20px;
+	color: var(--darkColor);
+	
+	
+	
+	align-self: center;
+	background-color:   var(--secondaryColor);
+	border: 2px  solid var(--mainColor);
+	border-radius: 25px;
+	transition: all 0.5s ease;
+	outline:none;
+	cursor: pointer;
+}
+
+#start-button:hover{
+	margin-top: 10px;
+	padding: 5px 20px;
+	font-size: 20px;
+	color: var(--primaryText);
+	align-self: center;
+	background-color:   var(--darkColor);
+	border: 2px  solid var(--primaryText);
+	border-radius: 25px;
 }
 
 
-
+#tools a{
+	
+	padding: 5px 20px;
+	font-size: 20px;
+	color: var(--darkColor);
+	margin-right: 10px;
+	align-self: center;
+	background-color:   var(--secondaryColor);
+	border: 2px  solid var(--mainColor);
+	border-radius: 25px;
+	transition: all 0.5s ease;
+	outline:none;
+	cursor: pointer;
+}
+#tools{
+	display: flex;
+	justify-content: center;
+}
+#tools a:hover{
+	
+	padding: 5px 20px;
+	font-size: 20px;
+	color: var(--primaryText);
+	align-self: center;
+	background-color:   var(--darkColor);
+	border: 2px  solid var(--primaryText);
+	border-radius: 25px;
+}
 
 @media all and (max-width:700px){
 	#home-main{
@@ -819,6 +887,21 @@ color: #FFFEFE;
 	font-size: 15px;
 	outline: none;
 }
+
+@media all and (max-width:800px){
+	#edit-routine .inputs input{
+	
+		color: white;
+		border: 3px solid white;
+		background-color: var(--darkColor);
+		padding: 7px;
+		width: 100%;
+		font-size: 15px;
+		outline: none;
+	}
+	
+}
+
 #edit-routine .inputs input::placeholder{
 	color: white;
 }
@@ -834,6 +917,20 @@ color: #FFFEFE;
 	border-radius: 70px;
 	cursor: pointer;
 	color: white;
+	transition: all 0.5s ease;
+}
+
+#edit-routine .inputs button:hover{
+	outline:none;
+	float: right;
+	width: 150px;
+	padding: 7px;
+	font-size: 15px;
+	background-color:var(--primaryText);
+    border: 3px solid var(--mainColor) ;
+	border-radius: 70px;
+	cursor: pointer;
+	color: var(--darkColor);
 }
 
 #task-list{
@@ -841,6 +938,16 @@ color: #FFFEFE;
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+
+#task-name{
+	font-family: 'Bangers', cursive;
+	font-weight: 500;
+	text-align: center;
+	font-size: 60px;
+	color: var(--mainColor);
+	text-shadow: 2px 2px #b3b3b3;
+}
+
 .task{
 	margin-top: 10px;
 	display: grid;
@@ -864,10 +971,20 @@ color: #FFFEFE;
 	background-color: var(--darkColor);
 	border: 3px solid white;
 	cursor: pointer;
+	transition: all 0.3s ease;
+}
+.task button:hover{
+	outline: none;
+	float: right;
+	color: var(--darkColor);
+	padding: 5px 10px;
+	background-color: var(--primaryText);
+	border: 3px solid var(--mainColor);
+	cursor: pointer;
 }
 #practise-routine h3{
 	text-align: center;
-	padding-top: 20px;
+	padding-top: 25px;
 	padding-bottom: 10px;
 }
 #practise-list{
@@ -885,6 +1002,7 @@ color: #FFFEFE;
 
 .practise.strike{
 	text-decoration: line-through;
+	color: rgb(158, 158, 158);
 }
 
 .practise.active{
@@ -905,3 +1023,55 @@ color: #FFFEFE;
 	align-self: center;
 	justify-self: center;
 }
+
+
+
+.admin-wrapper{
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	width: 30%;
+	margin: 0 auto;
+	justify-content: center;
+	height: 40%;
+	
+}
+.admin-wrapper .button{
+	margin-top: 10px;
+	padding: 5px;
+	font-size: 20px;
+}
+
+#usrEmailID{
+	margin-top: 10px;
+	padding: 10px;
+	font-size: 15px;
+}
+
+#userDetail{
+	text-align: center;
+}
+
+
+
+
+
+
+/*? ============================= */
+/** Profile */
+/*? ============================= */
+
+#profile_uname{
+	padding-top: 5vh;
+	text-align: center;
+	font-size: 50px;
+}
+
+.chartcontainer{
+	
+	display: flex;
+	justify-content: center;
+
+}
+
+

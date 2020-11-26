@@ -6,14 +6,14 @@
 
 <div class="nav">
 	<div class="container">
-		<h2>Logo</h2>
+		<img src="./assets/images/logo/logo-light.svg" alt="">
 	<ul>
-		<li><a href="./views/about.php">About Us</a></li>
-		<li><a href="./views/contact.php">Contact  Us</a></li>
+		<li><a href="./views/about.php">About</a></li>
+		<li><a href="./views/contact.php">Contact</a></li>
 				
 		<?php 
 		if(isset( $_SESSION["user_email"])){
-			echo '<li><a href="./views/home.php">home</a></li>';
+			
 			echo '<li><a href="./includes/logout.inc.php">Log out</a></li>';
 		}else{
 			echo '<li><a href="./views/login.php">login</a></li>';	
@@ -37,7 +37,15 @@
 	<div class="hero-content">
 		<h1  data-aos="zoom-in" data-aos-duration="1000">Welcome to guitarly</h1>
 		<h3  data-aos="zoom-in" data-aos-delay="50" data-aos-duration="1000">Your journey to a better guitarist</h3>
-		<a href="#"  data-aos="zoom-in" data-aos-delay="100" data-aos-duration="2000"><b> Let's go</b></a>
+		<?php 
+		if(isset( $_SESSION["user_email"])){
+			echo '<a href="./views/home.php"  data-aos="zoom-in" data-aos-delay="100" data-aos-duration="2000"><b> Let\'s go</b></a>';
+		}else{
+			echo '<a href="./views/login.php"  data-aos="zoom-in" data-aos-delay="100" data-aos-duration="2000"><b> Let\'s go</b></a>';
+				
+		}
+		?>
+		
 	</div>	
 </div>
 

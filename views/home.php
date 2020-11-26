@@ -6,21 +6,20 @@
 
 <div class="home-nav">
 	
-		<h2>Logo</h2>
+	<a href="../index.php">	<img style="width:212px;" src="../assets/images/logo/logo-dark.svg" alt=""></a>
 	<ul>
 		<li><a href="./about.php">About Us</a></li>
 		<li><a href="./contact.php">Contact  Us</a></li>
         <?php 
 		if(isset( $_SESSION["user_email"])){
-			echo '<li><a href="./home.php">home</a></li>';
+			// echo '<li><a href="./home.php">home</a></li>';
 			echo '<li><a href="../includes/logout.inc.php">Log out</a></li>';
 		}else{
 			echo '<li><a href="./login.php">login</a></li>';	
 			echo '<li><a href="./register.php">register</a></li>';	
 		}
 		?>
-		<li>
-			
+		<li>	
 		</li>
 	</ul>
 	
@@ -69,12 +68,15 @@
 	<div id="home-tools-section">
 		<h3 id="task-name">Task Name</h3>
 		<div id="timer">
-			<div ><h3>Time left</h3></div>
+			<div ><h2>Time left</h2></div>
 			<div  id="time-left"> 60 </div>
 			<button id="start-button">start/stop</button>
 		</div>
-
-		
+		<div id="tools">
+			<a href="./metronome/index.html" target="_blank" id="metronome">Metronome</a>
+			<a id="tuner">Tuner</a>
+			<a href="./profile.php"  id="Profile">Profile</a>
+		</div>
 	</div>
 </div>
 

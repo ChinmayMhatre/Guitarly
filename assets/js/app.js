@@ -345,20 +345,20 @@ document.addEventListener("DOMContentLoaded",()=>{
                         var updatexml =new XMLHttpRequest();
                         updatexml.onreadystatechange=function() {
                         if (this.readyState==4 && this.status==200) {
-                            console.log(this.responseText); 
+                            console.log(this.responseText+"correct"); 
                         }}
                         updatexml.open("GET","../includes/insertprogress.php?phptime="+phptime,true);
                         updatexml.send(); 
                          
                     }else{
-                        //! add in the database
-                        var updatexml1 =new XMLHttpRequest();
-                        updatexml1.onreadystatechange=function() {
-                        if (this.readyState==4 && this.status==200) {
-                            console.log(this.responseText);
-                            values.push(timeName.innerHTML);
-                            setCookie(uid,JSON.stringify(values),1);
-                            return false;
+                            //! add in the database
+                            var updatexml1 =new XMLHttpRequest();
+                            updatexml1.onreadystatechange=function() {
+                            if (this.readyState==4 && this.status==200) {
+                                console.log(this.responseText+"Not Correct");
+                                values.push(timeName.innerHTML);
+                                setCookie(uid,JSON.stringify(values),1);
+                                return false;
                              
                         }}
                         updatexml1.open("GET","../includes/insertprogress.php?phptime="+phptime,true);
@@ -417,12 +417,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 
 
-// function setCookie(cname, cvalue, exdays) {
-//     var d = new Date();
-//     d.setTime(d.getTime() + (exdays*24*60*60*1000));
-//     var expires = "expires="+ d.toUTCString();
-//     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-//   }
+
 function setCookie(cname, cvalue, exdays) {
     var date = new Date();
     var midnight = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 59);
@@ -446,34 +441,5 @@ function setCookie(cname, cvalue, exdays) {
     }
     return "";
   }
-
-
-// function bake_cookie(name, value) {
-//     var cookie = [name, '=', JSON.stringify(value), '; domain=.', window.location.host.toString(), '; path=/;'].join('');
-//     console.log(cookie);
-//     document.cookie = cookie;
-//   }
-
-
-// function read_cookie(name) {
-//     var result = document.cookie.match(new RegExp(name + '=([^;]+)'));
-//     result && (result = JSON.parse(result[1]));
-//     return result;
-//    }
-
-//   function getCookie()  
-//   {  
-//       if( document.cookie.length!=0)  
-//       {  
-//   //Parsing JSON string to JSON object  
-//       return JSON.parse(document.cookie);  
-
-//           //alert("Name="+obj.name+" "+"Email="+obj.email+" "+"Course="+obj.course);  
-//       }  
-//       else  
-//       {  
-//           return taskcookie;
-//       }  
-//   }  
 
 

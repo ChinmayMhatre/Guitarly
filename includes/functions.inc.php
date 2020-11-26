@@ -85,20 +85,34 @@ function  loginuser($con,$email,$pwd){
         header("location:../views/login.php?error=emailnotfound");
         exit();
     }
+    $e=$emailexists["email"];
     $hpwd = $emailexists['user_password'];
     $checkpwd = password_verify($pwd,$hpwd);
-
+    
     if($checkpwd == false){
         header("location:../views/login.php?error=wrongpassword");
         exit();
     }
     else if($checkpwd == true){
-        session_start();
-        $_SESSION["user_email"]=$emailexists['email'];
-        $_SESSION["user_name"]=$emailexists['username'];
-        $_SESSION["user_id"]=$emailexists['id'];
-        header("location:../views/home.php?error=none");
-        exit();
+        $checkadm = "SELECT * FROM  site_admin WHERE a_email = '$e';";
+        $admincheck = $con->query($checkadm);
+        
+        if ($admincheck->num_rows > 0) {
+            session_start();
+            $_SESSION["user_email"]=$emailexists['email'];
+            $_SESSION["user_name"]=$emailexists['username'];
+            $_SESSION["user_id"]=$emailexists['id'];
+            header("location:../views/adminhome.php?error=none");
+            exit();
+          } else {
+            session_start();
+            $_SESSION["user_email"]=$emailexists['email'];
+            $_SESSION["user_name"]=$emailexists['username'];
+            $_SESSION["user_id"]=$emailexists['id'];
+            header("location:../views/home.php");
+            exit();
+          }
+        
     }
 }
 
