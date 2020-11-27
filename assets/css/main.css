@@ -274,6 +274,7 @@ color: #FFFEFE;
 .feature-main p{
 	color: var(--primaryText);
 	padding-right: 40px;
+	text-align: justify;
 	
 }
 .feature-main .img-holder{

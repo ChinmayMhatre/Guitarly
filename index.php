@@ -60,28 +60,28 @@
 			<div class="metronome-content" data-aos="zoom-in" >
 				<h3>Metronome</h3>
 				<hr>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae pariatur deserunt optio cupiditate corporis ipsum, commodi ducimus ipsa! Cum, sed.</p>
+				<p>Metronome is a practise tool that produces a regulated pulse to help you play rhythms accurately and to create a clear sense of timing and tempo.</p>
 			</div>
 			<div class="metronome-img" data-aos="fade-left">
-				<div class="img-holder"><img src="./assets/images/guitar.jpg" alt=""></div>
+				<div class="img-holder"><img src="./assets/images/Metronome.png" alt=""></div>
 			</div>
 
 			<div class="tuner-img" data-aos="fade-right">
-				<div class="img-holder"><img src="./assets/images/guitar.jpg" alt=""></div>
+				<div class="img-holder"><img src="./assets/images/graph.jpg" alt=""></div>
 			</div>
 			<div class="tuner-content "  data-aos="zoom-in">
-				<h3>Tuner</h3>
+				<h3>Progress Graph</h3>
 				<hr>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae pariatur deserunt optio cupiditate corporis ipsum, commodi ducimus ipsa! Cum, sed.</p>
+				<p>A graph that motivates users by displaying their daily progress . The visual representation of their progress makes it easier for the user to track their progress</p>
 			</div>
 			
 			<div class="practisearea-content" data-aos="zoom-in">
 				<h3>Practise Area</h3>
 				<hr>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae pariatur deserunt optio cupiditate corporis ipsum, commodi ducimus ipsa! Cum, sed.</p>
+				<p>Practise area provides a package deal will some of the essential tool for the guitarist . It consists of a task list a timer and a metronome.</p>
 			</div>
 			<div class="practisearea-img" data-aos="fade-left">
-				<div class="img-holder"><img src="./assets/images/guitar.jpg" alt=""></div>
+				<div class="img-holder"><img src="./assets/images/practise.jpg" alt=""></div>
 			</div>
 		</div>				
 	</div>	

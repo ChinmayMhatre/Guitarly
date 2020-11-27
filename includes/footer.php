@@ -11,7 +11,7 @@
    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
    crossorigin=""></script>
 <script src="../assets/js/map.js"></script>
-<script src="../assets/js/tuner.js"></script>
+<!-- <script src="../assets/js/tuner.js"></script> -->
 <script src="../assets/js/validation.js"></script>
 <script src="../assets/js/app.js"></script>
 </body>

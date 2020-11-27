@@ -74,7 +74,7 @@
 		</div>
 		<div id="tools">
 			<a href="./metronome/index.html" target="_blank" id="metronome">Metronome</a>
-			<a id="tuner">Tuner</a>
+			
 			<a href="./profile.php"  id="Profile">Profile</a>
 		</div>
 	</div>

@@ -20,7 +20,7 @@ $uid = $_SESSION["user_id"];
     if ($result->num_rows > 0) {
     // output data of each row
     
-        $update = "UPDATE tasks SET task_time='$ttime' WHERE task_name='$tname'";
+        $update = "UPDATE tasks SET task_time='$ttime' WHERE task_name='$tname' AND user_id = '$uid'";
         if ($con->query($update) === TRUE) {
             echo "Record updated successfully";
           } else {

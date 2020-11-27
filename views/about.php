@@ -13,46 +13,46 @@
 
 		<div class="about-us-main">
 			<div class="card" data-aos="zoom-in-up" data-aos-offset="300">
-				<div class="card-img"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=822&q=80" alt=""></div>
+				<div class="card-img"><img src="../assets/images/rutuja.jpeg" alt=""></div>
 				<div class="card-content">
 					<h3>Rutuja <br> Jadhav</h3>
-					<h4>TE IT B 55</h4>
+					<h4>TE IT B 49</h4>
 					<div class="socials">
-						<img src="../assets/images/icon/github-brands.svg" alt="">
-						<img src="../assets/images/icon/linkedin-in-brands.svg" alt="">
+						<a target="_blank" href="https://github.com/rutujadhav002"><img src="../assets/images/icon/github-brands.svg" alt=""></a>	
+						<a target="_blank" href="https://www.linkedin.com/in/rutuja-jadhav-3984861aa/"><img src="../assets/images/icon/linkedin-in-brands.svg" alt=""></a>	
 					</div>
 				</div>
 			</div>
 			<div class="card" data-aos="zoom-in-up" data-aos-offset="300" data-aos-delay="50">
-				<div class="card-img"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=822&q=80" alt=""></div>
+				<div class="card-img"><img src="../assets/images/chinmay.jpeg" alt=""></div>
 				<div class="card-content">
 					<h3>Chinmay <br> Mhatre</h3>
 					<h4>TE IT B 55</h4>
 					<div class="socials">
-						<img src="../assets/images/icon/github-brands.svg" alt="">
-						<img src="../assets/images/icon/linkedin-in-brands.svg" alt="">
+					<a target="_blank" href="https://github.com/ChinmayMhatre"><img src="../assets/images/icon/github-brands.svg" alt=""></a>	
+					<a target="_blank" href="https://www.linkedin.com/in/chinmaymhatre/"><img src="../assets/images/icon/linkedin-in-brands.svg" alt=""></a>	
 					</div>
 				</div>
 			</div>
 			<div class="card" data-aos="zoom-in-up" data-aos-offset="300" data-aos-delay="100">
-				<div class="card-img"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=822&q=80" alt=""></div>
+				<div class="card-img"><img src="../assets/images/prasad.jpeg" alt=""></div>
 				<div class="card-content">
 					<h3>Prasad <br> Patil</h3>
-					<h4>TE IT B 55</h4>
+					<h4>TE IT B 59</h4>
 					<div class="socials">
-						<img src="../assets/images/icon/github-brands.svg" alt="">
-						<img src="../assets/images/icon/linkedin-in-brands.svg" alt="">
+					<a target="_blank" href="https://github.com/prasad2200"><img src="../assets/images/icon/github-brands.svg" alt=""></a>	
+					<a target="_blank" href="#"><img src="../assets/images/icon/linkedin-in-brands.svg" alt=""></a>
 					</div>
 				</div>
 			</div>
 			<div class="card" data-aos="zoom-in-up" data-aos-offset="300" data-aos-delay="150">
-				<div class="card-img"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=822&q=80" alt=""></div>
+				<div class="card-img"><img src="../assets/images/zoheb.jpeg" alt=""></div>
 				<div class="card-content">
 					<h3>Zoheb <br> Waghu</h3>
-					<h4>TE IT B 55</h4>
+					<h4>TE IT B 70</h4>
 					<div class="socials">
-						<img src="../assets/images/icon/github-brands.svg" alt="">
-						<img src="../assets/images/icon/linkedin-in-brands.svg" alt="">
+						<a target="_blank" href="#"><img src="../assets/images/icon/github-brands.svg" alt=""></a>	
+						<a target="_blank" href="https://www.linkedin.com/in/zoheb-waghu-a305a246/"><img src="../assets/images/icon/linkedin-in-brands.svg" alt=""></a>
 					</div>
 				</div>
 			</div>

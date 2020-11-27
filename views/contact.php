@@ -28,15 +28,15 @@
 	</div>
 	<div class="address">
 		<h4>Address</h4>
-		<p>1234, random location ,<br> random country , 400233</p>
+		<p>1234, Kharghar,<br>  Navi Mumbai ,<br> 400233</p>
 	</div>
 	<div class="phone">
 		<h4>Phone</h4>
-		<p style="text-align: center;" >100100100 <br> 900900900</p>
+		<p style="text-align: center;" >1001001001 <br> 9009009001</p>
 	</div>
 	<div class="social-media">
 		<h4>Socials</h4>
-		<p>@rutujaa_02</p>
+		<a target="_blank" href="https://www.instagram.com/aasthaangre/"><p>@aasthaangre</p></a>	
 	</div>
 </section>
 

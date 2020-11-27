@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
    
@@ -36,7 +36,7 @@
                     <div class="dot"></div>
                     <div class="dot"></div>
                 </div>
-                <p class="subtitle">Or use your email</p>
+                <p class="subtitle"> use your email</p>
                 <div id="success">
                 <?php 
                         if(isset($_GET["error"])){
