@@ -14,6 +14,9 @@
 	padding: 0;
 	font-family: 'Poppins', sans-serif;
 }
+body{
+	overflow-x: hidden;
+}
 
 p,li,a{
 	font-size: 20px;
@@ -49,9 +52,9 @@ h3{
 	
 	position: absolute;
 	top: 0;
-	left: 17%;
+	left: 8%;
 	padding-top: 10px;
-	width:70%;
+	width:90%;
 	margin:0 auto;
 	display: flex;
 	justify-content: space-between;
@@ -306,7 +309,7 @@ color: #FFFEFE;
 }
 
 
-@media all and (max-width:700px){
+@media only screen and (max-width:700px){
 	.feature-main{
 		margin-top: 3rem;
 		display: grid;
@@ -320,6 +323,12 @@ color: #FFFEFE;
 		
 		row-gap: 40px;
 	
+	}
+	.feature-main p{
+		color: var(--primaryText);
+		padding-right: 0px;
+		text-align: justify;
+		
 	}
 }
 
@@ -889,24 +898,6 @@ color: #FFFEFE;
 	outline: none;
 }
 
-@media all and (max-width:800px){
-	#edit-routine .inputs input{
-	
-		color: white;
-		border: 3px solid white;
-		background-color: var(--darkColor);
-		padding: 7px;
-		width: 100%;
-		font-size: 15px;
-		outline: none;
-	}
-	
-}
-
-#edit-routine .inputs input::placeholder{
-	color: white;
-}
-
 #edit-routine .inputs button{
 	outline:none;
 	float: right;
@@ -939,6 +930,48 @@ color: #FFFEFE;
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+
+@media all and (max-width:800px){
+	#edit-routine .inputs input{
+	
+		color: white;
+		border: 3px solid white;
+		background-color: var(--darkColor);
+		padding: 7px;
+		width: 100%;
+		margin-top: 5px;
+		font-size: 15px;
+		outline: none;
+	}
+	#edit-routine .inputs{
+		padding-top: 2vh;
+		height: auto;
+		padding-bottom: 0;
+		
+	}
+
+	#edit-routine .inputs button{
+		margin-top: 10px;
+		float: none;
+		width: 100%;
+		
+	}
+
+	#task-list{
+	
+		padding-top: 20px;
+		padding-bottom: 10px;
+	}
+	
+}
+
+#edit-routine .inputs input::placeholder{
+	color: white;
+}
+
+
+
+
 
 #task-name{
 	font-family: 'Bangers', cursive;

@@ -13,7 +13,7 @@ if(!isset($_SESSION['user_email'])){
 <head>
   
   <meta charset="UTF-8">
- 
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
 <script>
 function getUser() {
   usrEmailID = document.getElementById("usrEmailID").value;

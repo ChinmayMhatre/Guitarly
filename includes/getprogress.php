@@ -1,6 +1,4 @@
-<?php header("Content-Type: application/json; charset=UTF-8"); ?>
-
-<?php
+<?php header("Content-Type: application/json; charset=UTF-8"); 
 session_start();
 require_once 'connect.inc.php';
 

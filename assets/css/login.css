@@ -245,6 +245,15 @@ color: #FFFFFF;
                             "login-left";
     }
 
+    .form-container{
+        display: flex;
+        height: 100%;
+        
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5vh;
+    }
 
     .form-container h1{
         text-align: center;
